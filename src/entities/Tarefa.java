@@ -80,4 +80,16 @@ public class Tarefa {
     public void setDataLimite(Date dataLimite) {
         this.dataLimite = dataLimite;
     }
+
+    @Override
+    public String toString() {
+        return "Tarefa{" +
+                "nome='" + nome + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", prioridade=" + prioridade +
+                ", status=" + status +
+                ", dataLimite=" + dataLimite +
+                '}';
+    }
 }
