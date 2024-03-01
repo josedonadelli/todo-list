@@ -14,7 +14,7 @@ public class Tarefa {
 
     private Date dataLimite;
 
-
+    public Tarefa(){}
     public Tarefa(String nome, String categoria, String descricao, int prioridade, Status status) {
         this.nome = nome;
         this.categoria = categoria;
@@ -31,6 +31,15 @@ public class Tarefa {
         this.prioridade = prioridade;
         this.status = status;
         this.dataLimite = DateFormat.dateFormat(dataLimite);
+    }
+
+    public Tarefa(String nome, String categoria, String descricao, int prioridade, Status status, Date dataLimite) {
+        this.nome = nome;
+        this.categoria = categoria;
+        this.descricao = descricao;
+        this.prioridade = prioridade;
+        this.status = status;
+        this.dataLimite = dataLimite;
     }
 
     public String getNome() {

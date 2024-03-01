@@ -1,7 +1,3 @@
-### Meus Arquivos ###
-src/dto/*
-
-
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
