@@ -19,16 +19,5 @@ public class TarefaMapper {
 
        return new Tarefa(dto.getNome(), dto.getCategoria(), dto.getDescricao(), Integer.parseInt(dto.getPrioridade()), Status.valueOf(dto.getStatus()),DateFormat.outPutToInputFormat(dto.getDataLimite()));
     }
-
-    public static List<TarefaDTO> fromStringToDTO(List<String> tarefas){
-        List<TarefaDTO> listaDTO = new ArrayList<TarefaDTO>();
-
-        for(String tarefa : tarefas){
-            for(int i = 0; i < tarefas.size() ; i++){
-                listaDTO.add(fromString(tarefas.get(i).replace("'", "").split(",")));
-            }
-        }
-        return listaDTO;
-    }
-
+    
 }
