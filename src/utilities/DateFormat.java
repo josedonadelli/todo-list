@@ -19,36 +19,6 @@ public class DateFormat {
         }
     }
 
-    public static boolean verifyNumberOfDays(String date){
-        String[] dateSplit = date.split("-");
-        int day = Integer.parseInt(dateSplit[0]);
-        int year = Integer.parseInt(dateSplit[2]);
-        boolean leapYear = (year % 4 == 0) && (year % 100 != 0);
-
-        if(day<=0 || day>31){
-            return false;
-        }
-        switch (dateSplit[1]) {
-            case "Jan":
-            case "Mar":
-            case "May":
-            case "Jul":
-            case "Aug":
-            case "Oct":
-            case "Dec":
-                return true;
-            case "Apr":
-            case "Jun":
-            case "Sep":
-            case "Nov": if(day <= 30){
-                return true;
-            }
-            case "Feb": if(day <= 28 || (day == 29 && leapYear)){
-                return true;
-            }
-            default: return false;
-        }
-    }
 
     public static Date outPutToInputFormat(String date){
         String dateHandler;

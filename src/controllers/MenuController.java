@@ -116,6 +116,7 @@ public class MenuController {
         System.out.println("1. Filtrar tarefas por Categoria \n" +
                 "2. Filtrar tarefas por Prioridade \n" +
                 "3. Filtrar tarefas por Status \n" +
+                "4. Filtrar tarefas por Data para Termino\n" +
                 "0. Voltar ao menu principal \n" +
                 "Digite sua escolha: ");
         opt = myObj.nextInt();

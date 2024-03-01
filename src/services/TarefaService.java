@@ -4,6 +4,7 @@ import dto.TarefaDTO;
 import dto.TarefaMapper;
 import entities.Status;
 import entities.Tarefa;
+import utilities.DateFormat;
 import utilities.ToCSV;
 
 import java.io.IOException;
@@ -109,7 +110,7 @@ public class TarefaService {
     public void filtroPorCategoria(List<Tarefa> tarefas, String categoria){
         List<Tarefa> tarefasFiltradas = new ArrayList<Tarefa>();
         for (Tarefa tarefa : tarefas){
-            if(tarefa.getCategoria().equals(categoria)){
+            if(tarefa.getCategoria().equalsIgnoreCase(categoria)){
                 tarefasFiltradas.add(tarefa);
             }
         }
@@ -139,6 +140,30 @@ public class TarefaService {
         tarefasFiltradas.forEach(System.out::println);
     }
 
+    public void filtroPorData(List<Tarefa> tarefas, String sDataInicio, String sDataFim){
+        List<Tarefa> tarefasFiltradas = new ArrayList<Tarefa>();
+        Date dataInicio = DateFormat.dateFormat(sDataInicio);
+        Date dataFim = DateFormat.dateFormat(sDataFim);
+
+        for (Tarefa tarefa : tarefas){
+            if(tarefa.getDataLimite() == null){
+
+            }
+            else if(tarefa.getDataLimite().equals(dataInicio) || tarefa.getDataLimite().equals(dataFim) ||
+                    (tarefa.getDataLimite().after(dataInicio) && tarefa.getDataLimite().before(dataFim))){
+                tarefasFiltradas.add(tarefa);
+            }
+        }
+
+        System.out.println("Tarefas encontradas com data para termino entre " + sDataInicio + "e " + sDataFim + ": \n");
+        if(!tarefasFiltradas.isEmpty()){
+            tarefasFiltradas.forEach(System.out::println);
+        }else {
+            System.out.println("Nenhuma tarefa encontrada entre essas datas");
+        }
+
+    }
+
     public void filtro(int opt){
         List<Tarefa> tarefas = this.listaDeTarefas();
         Scanner myObj = new Scanner(System.in);
@@ -154,6 +179,19 @@ public class TarefaService {
                 case 3:
                     System.out.println("Informe o Status desejado");
                     this.filtroPorStatus(tarefas, myObj.nextLine());
+                    break;
+            case 4:
+                String dataInicial, dataFinal;
+                System.out.println("Informe a data incial desejada (apenas numeros 'dia-mes-ano'): ");
+                dataInicial = myObj.nextLine();
+                System.out.println("Informe a data final desejada (apenas numeros 'dia-mes-ano'): ");
+                dataFinal = myObj.nextLine();
+                this.filtroPorData(tarefas, dataInicial, dataFinal);
+                break;
+
+            default:
+                System.out.println("Valor fornecido não encontrado ");
+                break;
 
         }
     }

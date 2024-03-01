@@ -92,7 +92,7 @@ public class Tarefa {
 
     @Override
     public String toString() {
-        return "Tarefa{" +
+        return "{" +
                 "nome='" + nome + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", descricao='" + descricao + '\'' +
