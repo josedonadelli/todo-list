@@ -4,11 +4,6 @@ import entities.Status;
 import entities.Tarefa;
 import utilities.DateFormat;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static services.TarefaService.fromString;
 
 public class TarefaMapper {
     public static TarefaDTO fromEntity(Tarefa tarefa){
@@ -19,5 +14,5 @@ public class TarefaMapper {
 
        return new Tarefa(dto.getNome(), dto.getCategoria(), dto.getDescricao(), Integer.parseInt(dto.getPrioridade()), Status.valueOf(dto.getStatus()),DateFormat.outPutToInputFormat(dto.getDataLimite()));
     }
-    
+
 }

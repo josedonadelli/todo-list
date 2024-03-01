@@ -4,7 +4,6 @@ import entities.Status;
 import entities.Tarefa;
 import services.TarefaService;
 import utilities.DateFormat;
-import java.util.List;
 import java.util.Scanner;
 
 public class MenuController {
