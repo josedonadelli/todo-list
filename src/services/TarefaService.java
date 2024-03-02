@@ -146,9 +146,7 @@ public class TarefaService {
         Date dataFim = DateFormat.dateFormat(sDataFim);
 
         for (Tarefa tarefa : tarefas){
-            if(tarefa.getDataLimite() == null){
-
-            }
+            if(tarefa.getDataLimite() == null){}
             else if(tarefa.getDataLimite().equals(dataInicio) || tarefa.getDataLimite().equals(dataFim) ||
                     (tarefa.getDataLimite().after(dataInicio) && tarefa.getDataLimite().before(dataFim))){
                 tarefasFiltradas.add(tarefa);

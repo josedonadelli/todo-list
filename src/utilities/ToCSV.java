@@ -29,7 +29,7 @@ public class ToCSV {
 
     public List<String> openCSVFile(){
         List<List<String>> records = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("/home/jose/workspace/acelera-zg/todo-list/src/repositories/TarefasRepository.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/repositories/TarefasRepository.csv"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split("\n");
@@ -43,7 +43,8 @@ public class ToCSV {
 
 
     public void givenDataArray_whenConvertToCSV_thenOutputCreated(List<String> dataLines) throws IOException {
-        File csvOutputFile = new File("/home/jose/workspace/acelera-zg/todo-list/src/repositories/TarefasRepository.csv");;
+        File csvOutputFile = new File("src/repositories/TarefasRepository.csv");
+
         try (PrintWriter pw = new PrintWriter(String.valueOf(csvOutputFile))) {
             dataLines.stream()
                     .map(this::toCSV)

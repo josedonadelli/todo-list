@@ -7,7 +7,6 @@ import utilities.DateFormat;
 import java.util.Scanner;
 
 public class MenuController {
-    //private MenuService menuService = new MenuService();
     private final TarefaService tarefaService = new TarefaService();
     private  Scanner myObj = new Scanner(System.in);
 
