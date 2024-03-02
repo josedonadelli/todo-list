@@ -6,11 +6,11 @@ Uma aplicação para você organizar suas tarefas
 
 Ao iniciar o programa, você terá as seguinte opções
 
-> 0. Para finalizar o programa
-				1. Criar uma nova tarefa
-				2. Remover uma tarefa
-				3. Listar todas as tarefas
-				4. Filtrar tarefas
+> 0. Para finalizar o programa  
+> 1. Criar uma nova tarefa  
+> 2. Remover uma tarefa
+> 3. Listar todas as tarefas
+> 4. Filtrar tarefas
 				
 ### Criar uma nova tarefa
 Para criar uma nova tarefa basta entrar com os valores que serão pedidos
@@ -47,16 +47,16 @@ Para remover uma tarefa basta informar o nome dela. Qualquer erro no nome passad
 Aqui você pode listar todas as tarefas ordenadas por três diferentes opções: 
 
 > 1. Ordenada por Categoria
-			2. Ordenada por Prioridade
-			3. Ordenada por Status
+> 2. Ordenada por Prioridade
+> 3. Ordenada por Status
 
 ### Filtrar tarefas
 Utilize um dos quatro filtros para visualizar tarefas específicas. As opções de filtro são: 
 
 > 1. Categoria
-			2. Prioridade
-			3. Status
-			4. Data 
+> 2. Prioridade
+> 3. Status
+> 4. Data 
 
 Filtrar por **Categoria, Status ou Prioridade**: basta informar o valor desejado referente a opção selecionada.
 
@@ -110,5 +110,5 @@ A função retorna um objeto tipo *Date* da package *java.util*.
 
 Classe com funcionalidade de leitura e gravação dos dados no arquivo CSV. Foram utilizadas  classes das packages *java.util* e *java.io* 
 
-- **escapeSpecialCharacters()**: Uma função para tratar os dados que serão inseris no arquivo csv. Essa função utiliza *regex* para buscar e alterar caracteres específicos que poderiam causar uma alteração na estrutura dos dados ao serem salvos nesse tipo de arquivo.
+- **escapeSpecialCharacters(String data)**: Uma função para tratar os dados que serão inseris no arquivo csv. Essa função utiliza *regex* para buscar e alterar caracteres específicos que poderiam causar uma alteração na estrutura dos dados ao serem salvos nesse tipo de arquivo.
 
