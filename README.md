@@ -64,7 +64,7 @@ Filtrar por **Data**:
  o sistema irá pedir para informar dois valores, Data início e Data fim. Em seguida, serão retornadas as tarefas com datas iguais e as que estejam entre as datas informadas. Caso queira filtrar por apenas uma data, basta informar a mesma data duas vezes.
 
 
-## Tecnologias utilizadas
+## Funcionalidades e Tecnologias utilizadas
 
 ### TarefaService
 
